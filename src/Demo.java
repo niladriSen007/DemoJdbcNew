@@ -6,7 +6,7 @@ public class Demo {
         String url = "jdbc:postgresql://localhost:5433/students";
         String user = "postgres";
         String password = "user";
-        String query = "SELECT * FROM student ";
+        String query = "SELECT * FROM student ORDER BY sid DESC";
         String inserQuery = "INSERT INTO student VALUES(4, 'Rahul')";
         String preparedInsertQuery = "INSERT INTO student VALUES(?, ?)";
         String updateQuery = "UPDATE student SET sname = 'Raj' WHERE sid = 4";
@@ -23,7 +23,7 @@ public class Demo {
 
         // Using prepared statement to insert Dynamic Data
         PreparedStatement pstmt = conn.prepareStatement(preparedInsertQuery);
-        int id = 125;
+        int id = 35;
         String name = "Paramita";
         pstmt.setInt(1, id);
         pstmt.setString(2, name);
